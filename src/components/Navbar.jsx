@@ -100,6 +100,15 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
+            <div className="h-px bg-white/10 my-2" />
+            <a
+              href="/resume/garima-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm py-2 px-5 text-center mt-2 w-max"
+            >
+              <span>Resume</span>
+            </a>
           </div>
         </motion.div>
       )}

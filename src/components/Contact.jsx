@@ -88,7 +88,18 @@ export default function Contact() {
     if (Object.keys(v).length > 0) { setErrors(v); return }
     setErrors({})
     setSending(true)
-    setTimeout(() => { setSending(false); setSubmitted(true); setForm({ name: '', email: '', message: '' }) }, 1500)
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `*New inquiry from Portfolio!*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Message:* ${form.message}`
+    const whatsappUrl = `https://wa.me/919870712372?text=${encodeURIComponent(whatsappMessage)}`
+
+    // Simulate a brief delay for UX before opening WhatsApp
+    setTimeout(() => { 
+      setSending(false)
+      window.open(whatsappUrl, '_blank')
+      setSubmitted(true)
+      setForm({ name: '', email: '', message: '' }) 
+    }, 1000)
   }
 
   return (
