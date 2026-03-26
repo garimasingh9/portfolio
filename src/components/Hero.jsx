@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { HiCode } from 'react-icons/hi'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import profileImg from '../assets/profile/photo.png'
 
 export default function Hero() {
   const scrollToProjects = () => {
@@ -27,6 +28,29 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+
+        {/* Profile Image with Glowing Ring */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto w-32 h-32 mb-8"
+        >
+          {/* Spinning Glow */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 blur-xl opacity-60 animate-[spin_8s_linear_infinite]" />
+          
+          {/* Spinning Border */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-[spin_8s_linear_infinite]" />
+          
+          {/* Inner Background & Image Container */}
+          <div className="absolute inset-[3px] rounded-full bg-dark-900 z-10 overflow-hidden">
+            <img 
+              src={profileImg} 
+              alt="Garima Singh" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
 
         {/* Status badge */}
         <motion.div
