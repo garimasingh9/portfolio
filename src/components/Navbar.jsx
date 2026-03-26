@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX, HiOutlineEye, HiOutlineDownload, HiChevronDown } from 'react-icons/hi'
-import profileImg from "../assets/profile/photo.png"
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -41,25 +40,9 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-          className="transition duration-300 hover:scale-110 block shrink-0"
-        >
-          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 p-[2px] shadow-lg shadow-blue-500/20">
-            <div className="w-full h-full rounded-full bg-dark-900 overflow-hidden">
-              <img 
-                src={profileImg} 
-                alt="Profile" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </a>
+        {/* Empty spacer to maintain layout balance */}
+        <div className="w-12 h-12 shrink-0 md:hidden" />
+        <div className="hidden md:block w-12 h-12 shrink-0" />
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
