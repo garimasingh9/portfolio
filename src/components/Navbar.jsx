@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { HiMenuAlt3, HiX } from 'react-icons/hi'
+import { motion, AnimatePresence } from 'framer-motion'
+import { HiMenuAlt3, HiX, HiOutlineEye, HiOutlineDownload, HiChevronDown } from 'react-icons/hi'
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -14,6 +14,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [resumeOpen, setResumeOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -62,14 +63,47 @@ export default function Navbar() {
               {link.name}
             </button>
           ))}
-          <a
-            href="/resume/garima-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm py-2 px-5"
-          >
-            <span>Resume</span>
-          </a>
+          <div className="relative">
+            <button
+              onClick={() => setResumeOpen(!resumeOpen)}
+              className="btn-primary text-sm py-2 px-5 group"
+            >
+              <span>Resume</span>
+              <HiChevronDown className={`inline-block ml-1 transition-transform duration-300 ${resumeOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            <AnimatePresence>
+              {resumeOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-3 w-48 bg-dark-900 border border-white/10 rounded-lg shadow-xl shadow-black/50 p-2 flex flex-col gap-1 glass-card"
+                >
+                  <a
+                    href="/resume/garima-CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setResumeOpen(false)}
+                    className="flex justify-between items-center px-3 py-2 rounded-lg hover:bg-white/5 transition-all duration-300 text-slate-200 hover:text-neon-blue hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(0,212,255,0.2)] group/item"
+                  >
+                    <span className="text-sm font-medium">View</span>
+                    <HiOutlineEye className="text-lg text-slate-400 group-hover/item:text-neon-blue group-hover/item:scale-110 transition-all" />
+                  </a>
+                  <a
+                    href="/resume/garima-CV.pdf"
+                    download
+                    onClick={() => setResumeOpen(false)}
+                    className="flex justify-between items-center px-3 py-2 rounded-lg hover:bg-white/5 transition-all duration-300 text-slate-200 hover:text-neon-blue hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(0,212,255,0.2)] group/item"
+                  >
+                    <span className="text-sm font-medium">Download</span>
+                    <HiOutlineDownload className="text-lg text-slate-400 group-hover/item:text-neon-blue group-hover/item:scale-110 transition-all" />
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -101,14 +135,27 @@ export default function Navbar() {
               </button>
             ))}
             <div className="h-px bg-white/10 my-2" />
-            <a
-              href="/resume/garima-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-sm py-2 px-5 text-center mt-2 w-max"
-            >
-              <span>Resume</span>
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href="/resume/garima-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="btn-secondary text-sm py-2.5 px-5 flex justify-center items-center gap-2 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,212,255,0.2)]"
+              >
+                <HiOutlineEye className="text-lg" />
+                <span>View Resume</span>
+              </a>
+              <a
+                href="/resume/garima-CV.pdf"
+                download
+                onClick={() => setMobileOpen(false)}
+                className="btn-primary text-sm py-2.5 px-5 flex justify-center items-center gap-2 rounded-lg transition-all duration-300 hover:scale-105"
+              >
+                <HiOutlineDownload className="text-lg" />
+                <span>Download Resume</span>
+              </a>
+            </div>
           </div>
         </motion.div>
       )}
