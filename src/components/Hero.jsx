@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { HiCode } from 'react-icons/hi'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import profileImg from '../assets/profile/photo.png'
 
 export default function Hero() {
@@ -115,7 +114,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4"
         >
           <button onClick={scrollToProjects} className="btn-primary">
             <span className="flex items-center gap-2">
@@ -126,33 +125,6 @@ export default function Hero() {
           <button onClick={scrollToContact} className="btn-secondary">
             Contact Me
           </button>
-        </motion.div>
-
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.75 }}
-          className="flex justify-center gap-5"
-        >
-          <a
-            href="https://github.com/garimasingh9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-500 hover:text-neon-blue transition-colors text-xl"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/garima-singh-a5b369298/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-500 hover:text-neon-blue transition-colors text-xl"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
         </motion.div>
 
 
