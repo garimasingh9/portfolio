@@ -55,7 +55,7 @@ export default function Resume() {
           </div>
 
           <motion.a
-            href="/resume/garima-CV.pdf"
+            href="/resume/garima-CV.pdf?t=20260327"
             target="_blank"
             rel="noopener noreferrer"
             download="Garima_Singh_CV.pdf"
