@@ -53,32 +53,30 @@ export default function About() {
           >
             <div className="glass-card p-8 md:p-10">
               <p className="text-slate-300 leading-relaxed text-lg mb-6">
-                I&apos;m <span className="text-neon-blue font-semibold">Garima Singh</span>, a Computer Science Engineering student at{' '}
-                <span className="text-neon-purple font-semibold">Lovely Professional University</span>, driven by a deep passion for cybersecurity and full stack web development.
+                I&apos;m <span className="text-neon-blue font-semibold">Garima Singh</span>, an Information Technology student passionate about full stack development and cybersecurity.
               </p>
               <p className="text-slate-400 leading-relaxed mb-6">
-                With strong foundations in data structures and algorithms, I thrive on solving complex problems and building secure, 
-                scalable digital solutions. My journey spans from developing interactive web applications to performing 
-                vulnerability assessments using industry-leading tools like Wireshark, Burp Suite, and Metasploit.
+                I specialize in building secure, scalable, and modern web applications using Java, Spring Boot, React.js, SQL, and frontend technologies while continuously exploring cybersecurity concepts such as Linux, networking, web security, and penetration testing.
+              </p>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                With strong foundations in data structures, problem-solving, and software engineering, I enjoy creating real-world projects that combine functionality, performance, and security.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                I believe in learning by doing — every project I build is an opportunity to push boundaries, 
-                explore new technologies, and create impact. Whether it&apos;s crafting a fitness tracker, a cybersecurity 
-                toolkit, or an AI-powered financial platform, I approach each challenge with curiosity and precision.
+                My goal is to grow as a secure software developer by combining development expertise with cybersecurity knowledge to build impactful and reliable digital solutions.
               </p>
 
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-white/5">
                 <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">3+</div>
+                  <div className="text-2xl font-bold gradient-text">5+</div>
                   <div className="text-sm text-slate-500 mt-1">Projects</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">6+</div>
+                  <div className="text-2xl font-bold gradient-text">8+</div>
                   <div className="text-sm text-slate-500 mt-1">Languages</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold gradient-text">4+</div>
+                  <div className="text-2xl font-bold gradient-text">10+</div>
                   <div className="text-sm text-slate-500 mt-1">Certifications</div>
                 </div>
               </div>
