@@ -8,7 +8,7 @@ import {
 } from 'react-icons/si'
 import { 
   FaJava, FaShieldAlt, FaProjectDiagram, FaServer, FaCogs,
-  FaDatabase, FaNetworkWired, FaLock, FaCube, FaLaptop
+  FaDatabase, FaNetworkWired, FaLock, FaCube, FaLaptop, FaTerminal
 } from 'react-icons/fa'
 
 const coreStrengths = [
