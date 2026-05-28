@@ -47,6 +47,7 @@ export default function Hero() {
               src={profileImg} 
               alt="Garima Singh" 
               className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 20%' }}
             />
           </div>
         </motion.div>
